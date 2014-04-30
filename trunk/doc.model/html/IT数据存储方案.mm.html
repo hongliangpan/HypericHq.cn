@@ -1,0 +1,1741 @@
+<html>
+<head>
+<title>IT/IP&#25968;&#25454;&#23384;&#20648;&#32467;&#26500;</title>
+<style type="text/css">
+    span.foldopened { color: white; font-size: xx-small;
+    border-width: 1; font-family: monospace; padding: 0em 0.25em 0em 0.25em; background: #e0e0e0;
+    VISIBILITY: visible;
+    cursor:pointer; }
+
+
+    span.foldclosed { color: #666666; font-size: xx-small;
+    border-width: 1; font-family: monospace; padding: 0em 0.25em 0em 0.25em; background: #e0e0e0;
+    VISIBILITY: hidden;
+    cursor:pointer; }
+
+    span.foldspecial { color: #666666; font-size: xx-small; border-style: none solid solid none;
+    border-color: #CCCCCC; border-width: 1; font-family: sans-serif; padding: 0em 0.1em 0em 0.1em; background: #e0e0e0;
+    cursor:pointer; }
+
+    span.l { color: red; font-weight: bold; }
+
+    a.mapnode:link {text-decoration: none; color: black; }
+    a.mapnode:visited {text-decoration: none; color: black; }
+    a.mapnode:active {text-decoration: none; color: black; }
+    a.mapnode:hover {text-decoration: none; color: black; background: #eeeee0; }
+
+</style>
+<!-- ^ Position is not set to relative / absolute here because of Mozilla -->
+</head>
+<body>
+
+<script language="JavaScript">
+   // Here we implement folding. It works fine with MSIE5.5, MSIE6.0 and
+   // Mozilla 0.9.6.
+
+   if (document.layers) {
+      //Netscape 4 specific code
+      pre = 'document.';
+      post = ''; }
+   if (document.getElementById) {
+      //Netscape 6 specific code
+      pre = 'document.getElementById("';
+      post = '").style'; }
+   if (document.all) {
+      //IE4+ specific code
+      pre = 'document.all.';
+      post = '.style'; }
+
+function layer_exists(layer) {
+   try {
+      eval(pre + layer + post);
+      return true; }
+   catch (error) {
+      return false; }}
+
+function show_layer(layer) {
+   eval(pre + layer + post).position = 'relative'; 
+   eval(pre + layer + post).visibility = 'visible'; }
+
+function hide_layer(layer) {
+   eval(pre + layer + post).visibility = 'hidden';
+   eval(pre + layer + post).position = 'absolute'; }
+
+function hide_folder(folder) {
+    hide_folding_layer(folder)
+    show_layer('show'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+}
+
+function show_folder(folder) {
+    // Precondition: all subfolders are folded
+
+    show_layer('hide'+folder);
+    hide_layer('show'+folder);
+    show_layer('fold'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+
+    var i;
+    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       show_layer('show'+folder+'_'+i); }
+}
+function show_folder_completely(folder) {
+    // Precondition: all subfolders are folded
+
+    show_layer('hide'+folder);
+    hide_layer('show'+folder);
+    show_layer('fold'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+
+    var i;
+    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       show_folder_completely(folder+'_'+i); }
+}
+
+
+
+function hide_folding_layer(folder) {
+   var i;
+   for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       hide_folding_layer(folder+'_'+i); }
+
+   hide_layer('hide'+folder);
+   hide_layer('show'+folder);
+   hide_layer('fold'+folder);
+
+   scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+}
+
+function fold_document() {
+   var i;
+   var folder = '1';
+   for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       hide_folder(folder+'_'+i); }
+}
+
+function unfold_document() {
+   var i;
+   var folder = '1';
+   for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       show_folder_completely(folder+'_'+i); }
+}
+
+</script>
+<SPAN class="foldspecial" onclick="fold_document()">All +</SPAN>
+<SPAN class="foldspecial" onclick="unfold_document()">All -</SPAN>
+<div style="color: #000000;font-size: 20pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      IT/IP&#25968;&#25454;&#23384;&#20648;&#32467;&#26500;
+    </p>
+  </body>
+</html>
+</div><div style="color: #0033ff;font-size: 18pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#36164;&#28304;&#20998;&#31867;
+    </p>
+  </body>
+</html>
+</div><div style="color: #00b439;font-size: 16pt;font-family: SansSerif, sans-serif; "><span id="show1_1" class="foldclosed" onClick="show_folder('1_1')" style="POSITION: absolute">+</span> <span id="hide1_1" class="foldopened" onClick="hide_folder('1_1')">-</span>
+
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#22270;&#24418;
+    </p>
+  </body>
+</html>
+</div><div id="fold1_1" style="POSITION: relative; VISIBILITY: visible;"><div style="color: #990000;font-size: 14pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <img src="&#36164;&#28304;&#20998;&#31867;&#22270;.jpg" />
+  </body>
+</html>
+</div>
+</div><div style="color: #00b439;font-size: 16pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#24179;&#21488;Platform
+    </p>
+  </body>
+</html>
+</div><div style="color: #990000;font-size: 14pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#27010;&#24565;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#20027;&#26426;/OS
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#32593;&#32476;&#35774;&#22791;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#23384;&#20648;&#35774;&#22791;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#38450;&#28779;&#22681;
+    </p>
+  </body>
+</html>
+</div><div style="color: #990000;font-size: 14pt;font-family: SansSerif, sans-serif; "><span id="show1_2" class="foldclosed" onClick="show_folder('1_2')" style="POSITION: absolute">+</span> <span id="hide1_2" class="foldopened" onClick="hide_folder('1_2')">-</span>
+
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#20855;&#20307;
+    </p>
+  </body>
+</html>
+</div><div id="fold1_2" style="POSITION: relative; VISIBILITY: visible;"><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Network Device&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;netdevice&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      2&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Cisco PIXOS&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;netdevice&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      3&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Network Host&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;netdevice&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      4&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Cisco IOS&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;netdevice&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      5&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Solaris&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;system&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      6&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;AIX&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;system
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      7&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Win32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;system&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;HPUX&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;system&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      9&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FreeBSD&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;system&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      10&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MacOSX&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;system&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      11&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Linux&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;system
+    </p>
+  </body>
+</html>
+</div>
+</div><div style="color: #00b439;font-size: 16pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#26381;&#21153;&#22120;server
+    </p>
+  </body>
+</html>
+</div><div style="color: #990000;font-size: 14pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#27010;&#24565;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#25968;&#25454;&#24211;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#20013;&#38388;&#20214;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      web server
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#34394;&#25311;&#26426;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#24212;&#29992;&#31243;&#24207;
+    </p>
+  </body>
+</html>
+</div><div style="color: #990000;font-size: 14pt;font-family: SansSerif, sans-serif; "><span id="show1_3" class="foldclosed" onClick="show_folder('1_3')" style="POSITION: absolute">+</span> <span id="hide1_3" class="foldopened" onClick="hide_folder('1_3')">-</span>
+
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#20855;&#20307;
+    </p>
+  </body>
+</html>
+</div><div id="fold1_3" style="POSITION: relative; VISIBILITY: visible;"><div style="color: #111111;">1	.NET 1.1
+<br>
+2	.NET 2.0
+<br>
+3	.NET 3.0
+<br>
+4	Active Directory
+<br>
+5	ActiveMQ 4.0
+<br>
+6	Apache 1.3
+<br>
+7	Apache 2.0
+<br>
+8	Apache 2.2
+<br>
+9	Apache httpd
+<br>
+10	Apache-ERS 2.3
+<br>
+11	Apache-ERS 2.4
+<br>
+12	Apache-ERS 3.x
+<br>
+13	Bind 9.x
+<br>
+14	Cisco IOS Server
+<br>
+15	Cisco PIXOS Server
+<br>
+16	DB2 7.x
+<br>
+17	DB2 8.x
+<br>
+18	DB2 9.x
+<br>
+19	Exchange 2000
+<br>
+20	Exchange 2003
+<br>
+21	Exchange 5.5
+<br>
+22	FileServer
+<br>
+23	Geronimo 1.0
+<br>
+24	HQ Agent
+<br>
+25	IIS 4.x
+<br>
+26	IIS 5.x
+<br>
+27	IIS 6.x
+<br>
+28	JBoss 3.2
+<br>
+29	JBoss 4.0
+<br>
+30	JRun 4.x
+<br>
+31	MQSeries 5.x
+<br>
+32	MsSQL 2000
+<br>
+33	MsSQL 2005
+<br>
+34	Mule 1.3
+<br>
+35	MySQL 3.x
+<br>
+36	MySQL 4.x
+<br>
+37	MySQL 5.x
+<br>
+38	MySQL Process 3.x
+<br>
+39	MySQL Process 4.x
+<br>
+40	MySQL Process 5.x
+<br>
+41	NTP 4.x
+<br>
+42	Nagios
+<br>
+43	Net Services
+<br>
+44	Network Device Server
+<br>
+45	Network Host Server
+<br>
+46	NetworkServer
+<br>
+47	Oracle 10g
+<br>
+48	Oracle 8i
+<br>
+49	Oracle 9i
+<br>
+50	Postfix 2.x
+<br>
+51	PostgreSQL 7.4
+<br>
+52	PostgreSQL 8.0
+<br>
+53	PostgreSQL 8.1
+<br>
+54	PostgreSQL 8.2
+<br>
+55	ProcessServer
+<br>
+56	Resin 2.x
+<br>
+57	Resin 3.x
+<br>
+58	SQL Query
+<br>
+59	ServletExec 4.2
+<br>
+60	Sun JVM 1.5
+<br>
+61	Sybase 12.x
+<br>
+62	Tomcat 4.0
+<br>
+63	Tomcat 4.1
+<br>
+64	Tomcat 5.0
+<br>
+65	Tomcat 5.5
+<br>
+66	VMware ESX 2.x
+<br>
+67	VMware ESX 3.x
+<br>
+68	VMware GSX 3.x
+<br>
+69	VMware Server 1.x
+<br>
+70	WebSphere 5.0
+<br>
+71	WebSphere 6.0
+<br>
+72	WebSphere 6.1
+<br>
+73	WebSphere Admin 5.0
+<br>
+74	WebSphere Admin 6.0
+<br>
+75	WebSphere Admin 6.1
+<br>
+76	Weblogic 6.1
+<br>
+77	Weblogic 7.0
+<br>
+78	Weblogic 8.1
+<br>
+79	Weblogic 9.1
+<br>
+80	Weblogic 9.2
+<br>
+81	Weblogic Admin 6.1
+<br>
+82	Weblogic Admin 7.0
+<br>
+83	Weblogic Admin 8.1
+<br>
+84	Weblogic Admin 9.1
+<br>
+85	Weblogic Admin 9.2
+<br>
+86	Weblogic NodeManager 6.1
+<br>
+87	Weblogic NodeManager 7.0
+<br>
+88	Weblogic NodeManager 8.1
+<br>
+89	Weblogic NodeManager 9.1
+<br>
+90	Weblogic NodeManager 9.2
+<br>
+91	WindowsServer
+<br>
+92	iPlanet 4.1
+<br>
+93	iPlanet 6.0
+<br>
+94	iPlanet Admin 4.1
+<br>
+95	iPlanet Admin 6.0
+<br>
+96	memcached</div>
+</div><div style="color: #00b439;font-size: 16pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#32452;&#20214;service
+    </p>
+  </body>
+</html>
+</div><div style="color: #990000;font-size: 14pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#27010;&#24565;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#23601;&#26159;server&#30340;&#19968;&#32452;&#20214;<br >&#19968;&#20010;&#32593;&#32476;&#25509;&#21475;&#20063;&#26159;&#19968;&#20010;service
+    </p>
+  </body>
+</html>
+</div><div style="color: #990000;font-size: 14pt;font-family: SansSerif, sans-serif; "><span id="show1_4" class="foldclosed" onClick="show_folder('1_4')" style="POSITION: absolute">+</span> <span id="hide1_4" class="foldopened" onClick="hide_folder('1_4')">-</span>
+
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#20855;&#20307;
+    </p>
+  </body>
+</html>
+</div><div id="fold1_4" style="POSITION: relative; VISIBILITY: visible;"><div style="color: #111111;">1	activemq	ActiveMQ 4.0 Queue
+<br>
+2	activemq	ActiveMQ 4.0 Broker
+<br>
+3	activemq	ActiveMQ 4.0 Connector
+<br>
+4	activemq	ActiveMQ 4.0 Topic
+<br>
+5	apache	Apache-ERS 2.3 VHost
+<br>
+6	apache	Apache 1.3 VHost
+<br>
+7	apache	Apache-ERS 2.4 VHost
+<br>
+8	apache	Apache 2.0 VHost
+<br>
+9	apache	Apache 2.2 VHost
+<br>
+10	apache	Apache-ERS 3.x VHost
+<br>
+11	db2	DB2 9.x Database
+<br>
+12	db2	DB2 7.x Database
+<br>
+13	db2	DB2 8.x Database
+<br>
+14	db2	DB2 9.x Table
+<br>
+15	db2	DB2 7.x Table
+<br>
+16	db2	DB2 8.x Table
+<br>
+17	db2	DB2 8.x Tablespace
+<br>
+18	db2	DB2 9.x Tablespace
+<br>
+19	db2	DB2 7.x Tablespace
+<br>
+20	dotnet	.NET 3.0 Application
+<br>
+21	dotnet	.NET 1.1 Application
+<br>
+22	dotnet	.NET 2.0 Application
+<br>
+23	exchange	Exchange 5.5 IMAP4
+<br>
+24	exchange	Exchange 2003 IMAP4
+<br>
+25	exchange	Exchange 2000 POP3
+<br>
+26	exchange	Exchange 2000 Web
+<br>
+27	exchange	Exchange 5.5 Web
+<br>
+28	exchange	Exchange 2000 IMAP4
+<br>
+29	exchange	Exchange 5.5 POP3
+<br>
+30	exchange	Exchange 5.5 MTA
+<br>
+31	exchange	Exchange 2000 MTA
+<br>
+32	exchange	Exchange 2003 MTA
+<br>
+33	exchange	Exchange 2003 POP3
+<br>
+34	exchange	Exchange 2003 Web
+<br>
+35	geronimo	Geronimo 1.0 JCA Connection Factory
+<br>
+36	geronimo	Geronimo 1.0 Stateful Session Bean
+<br>
+37	geronimo	Geronimo 1.0 Stateless Session Bean
+<br>
+38	geronimo	Geronimo 1.0 Entity Bean
+<br>
+39	iis	IIS 6.x VHost
+<br>
+40	iis	IIS 5.x VHost
+<br>
+41	iis	IIS 4.x VHost
+<br>
+42	iplanet	iPlanet 4.1 VHost
+<br>
+43	iplanet	iPlanet 6.0 VHost
+<br>
+44	iplanet	iPlanet 6.0 Thread Pool
+<br>
+45	jboss	JBoss 3.2 Message Driven EJB
+<br>
+46	jboss	JBoss 4.0 Hibernate Session Factory
+<br>
+47	jboss	JBoss 3.2 JCA Connection Pool
+<br>
+48	jboss	JBoss 4.0 JMS Topic
+<br>
+49	jboss	JBoss 3.2 Stateful Session EJB
+<br>
+50	jboss	JBoss 3.2 Entity EJB
+<br>
+51	jboss	JBoss 4.0 JGroups Channel
+<br>
+52	jboss	JBoss 3.2 JMS Destination
+<br>
+53	jboss	JBoss 4.0 JCA Data Source
+<br>
+54	jboss	JBoss 4.0 Stateful Session EJB
+<br>
+55	jboss	JBoss 4.0 Message Driven EJB
+<br>
+56	jboss	JBoss 3.2 JMS Topic
+<br>
+57	jboss	JBoss 3.2 Stateless Session EJB
+<br>
+58	jboss	JBoss 4.0 JMS Destination
+<br>
+59	jboss	JBoss 4.0 EJB3
+<br>
+60	jboss	JBoss 3.2 Hibernate Session Factory
+<br>
+61	jboss	JBoss 4.0 Entity EJB
+<br>
+62	jboss	JBoss 3.2 JGroups Channel
+<br>
+63	jboss	JBoss 4.0 Stateless Session EJB
+<br>
+64	jboss	JBoss 4.0 JCA Connection Pool
+<br>
+65	jmx	Sun JVM 1.5 Garbage Collector
+<br>
+66	jmx	Sun JVM 1.5 Memory Pool
+<br>
+67	mqseries	MQSeries 5.x Queue Manager
+<br>
+68	mqseries	MQSeries 5.x Queue
+<br>
+69	mssql	MsSQL 2000 Database
+<br>
+70	mssql	MsSQL 2005 Database
+<br>
+71	mule	Mule 1.3 Endpoint
+<br>
+72	mule	Mule 1.3 Component
+<br>
+73	mule	Mule 1.3 Connector
+<br>
+74	mule	Mule 1.3 Router
+<br>
+75	mysql	MySQL 4.x Table
+<br>
+76	mysql	MySQL 3.x Table
+<br>
+77	mysql	MySQL 5.x Table
+<br>
+78	nagios	Nagios Plugin
+<br>
+79	netdevice	Cisco PIXOS Interface
+<br>
+80	netdevice	Network Host Storage
+<br>
+81	netdevice	Network Device Interface
+<br>
+82	netdevice	Network Host Interface
+<br>
+83	netdevice	Cisco IOS Interface
+<br>
+84	netservices	TCP Socket
+<br>
+85	netservices	RPC
+<br>
+86	netservices	SNMP
+<br>
+87	netservices	POP3
+<br>
+88	netservices	DHCP
+<br>
+89	netservices	FTP
+<br>
+90	netservices	LDAP
+<br>
+91	netservices	HTTP
+<br>
+92	netservices	SMTP
+<br>
+93	netservices	SSH
+<br>
+94	netservices	IMAP
+<br>
+95	netservices	DNS
+<br>
+96	netservices	NTP
+<br>
+97	ntds	Active Directory Authentication
+<br>
+98	ntds	Active Directory LDAP
+<br>
+99	oracle	Oracle 10g Tablespace
+<br>
+100	oracle	Oracle 9i User Instance
+<br>
+101	oracle	Oracle 9i Tablespace
+<br>
+102	oracle	Oracle 10g User Instance
+<br>
+103	oracle	Oracle 8i User Instance
+<br>
+104	oracle	Oracle 8i Tablespace
+<br>
+105	postfix	Postfix 2.x Queue
+<br>
+106	postgresql	PostgreSQL 8.1 Table
+<br>
+107	postgresql	PostgreSQL 8.0 Index
+<br>
+108	postgresql	PostgreSQL 7.4 Index
+<br>
+109	postgresql	PostgreSQL 8.2 Table
+<br>
+110	postgresql	PostgreSQL 8.1 Index
+<br>
+111	postgresql	PostgreSQL 8.2 Index
+<br>
+112	postgresql	PostgreSQL 7.4 Table
+<br>
+113	postgresql	PostgreSQL 8.0 Table
+<br>
+114	resin	Resin 3.x Single Host Port
+<br>
+115	resin	Resin 3.x Port
+<br>
+116	resin	Resin 3.x Webapp
+<br>
+117	resin	Resin 3.x Multiple Host Port
+<br>
+118	resin	Resin 3.x Connection Pool
+<br>
+119	servlet	Tomcat 5.0 Webapp
+<br>
+120	servlet	Resin 2.x Webapp
+<br>
+121	servlet	Tomcat 5.5 Connector
+<br>
+122	servlet	Tomcat 5.0 Connector
+<br>
+123	servlet	Tomcat 4.1 Webapp
+<br>
+124	servlet	ServletExec 4.2 Webapp
+<br>
+125	servlet	Tomcat 5.5 Webapp
+<br>
+126	servlet	Tomcat 4.0 Webapp
+<br>
+127	servlet	JRun 4.x Webapp
+<br>
+128	servlet	Tomcat 4.1 Connector
+<br>
+129	sybase	Sybase 12.x Instance
+<br>
+130	system	Windows Service
+<br>
+131	system	FileServer Directory
+<br>
+132	system	FileServer Mount
+<br>
+133	system	CPU
+<br>
+134	system	MultiProcess
+<br>
+135	system	Script
+<br>
+136	system	NetworkServer Interface
+<br>
+137	system	FileServer File
+<br>
+138	system	Process
+<br>
+139	vmware	VMware ESX 3.x VM
+<br>
+140	vmware	VMware ESX 3.x VM Disk
+<br>
+141	vmware	VMware GSX 3.x VM
+<br>
+142	vmware	VMware ESX 2.x VM Disk
+<br>
+143	vmware	VMware ESX 2.x VM NIC
+<br>
+144	vmware	VMware Server 1.x VM
+<br>
+145	vmware	VMware ESX 3.x VM NIC
+<br>
+146	vmware	VMware ESX 2.x VM
+<br>
+147	weblogic	Weblogic 9.1 JMS Server
+<br>
+148	weblogic	Weblogic 9.1 JDBC Connection Pool
+<br>
+149	weblogic	Weblogic 7.0 Stateless EJB
+<br>
+150	weblogic	Weblogic 8.1 JMS Server
+<br>
+151	weblogic	Weblogic 8.1 Stateless EJB
+<br>
+152	weblogic	Weblogic 6.1 Entity EJB
+<br>
+153	weblogic	Weblogic 9.2 Execute Queue
+<br>
+154	weblogic	Weblogic 8.1 Entity EJB
+<br>
+155	weblogic	Weblogic Admin 6.1 Entity EJB
+<br>
+156	weblogic	Weblogic 6.1 Webapp
+<br>
+157	weblogic	Weblogic 6.1 JTA Resource
+<br>
+158	weblogic	Weblogic 9.2 Stateful EJB
+<br>
+159	weblogic	Weblogic 9.1 Application
+<br>
+160	weblogic	Weblogic 8.1 JDBC Connection Pool
+<br>
+161	weblogic	Weblogic Admin 8.1 JTA Resource
+<br>
+162	weblogic	Weblogic 9.2 JDBC Connection Pool
+<br>
+163	weblogic	Weblogic 7.0 JTA Resource
+<br>
+164	weblogic	Weblogic Admin 8.1 Webapp
+<br>
+165	weblogic	Weblogic Admin 7.0 Execute Queue
+<br>
+166	weblogic	Weblogic Admin 7.0 Stateless EJB
+<br>
+167	weblogic	Weblogic 6.1 Stateful EJB
+<br>
+168	weblogic	Weblogic 6.1 JMS Destination
+<br>
+169	weblogic	Weblogic Admin 7.0 Webapp
+<br>
+170	weblogic	Weblogic Admin 8.1 Stateless EJB
+<br>
+171	weblogic	Weblogic Admin 9.1 JMS Destination
+<br>
+172	weblogic	Weblogic 8.1 JMS Destination
+<br>
+173	weblogic	Weblogic 9.1 Webapp
+<br>
+174	weblogic	Weblogic 8.1 Message Driven EJB
+<br>
+175	weblogic	Weblogic Admin 9.1 Webapp
+<br>
+176	weblogic	Weblogic 9.1 Execute Queue
+<br>
+177	weblogic	Weblogic 9.1 Stateless EJB
+<br>
+178	weblogic	Weblogic Admin 9.2 JDBC Connection Pool
+<br>
+179	weblogic	Weblogic Admin 6.1 JDBC Connection Pool
+<br>
+180	weblogic	Weblogic 9.1 Entity EJB
+<br>
+181	weblogic	Weblogic Admin 8.1 JMS Destination
+<br>
+182	weblogic	Weblogic Admin 8.1 Message Driven EJB
+<br>
+183	weblogic	Weblogic Admin 6.1 JMS Server
+<br>
+184	weblogic	Weblogic 6.1 JMS Server
+<br>
+185	weblogic	Weblogic Admin 8.1 Execute Queue
+<br>
+186	weblogic	Weblogic 7.0 Stateful EJB
+<br>
+187	weblogic	Weblogic 7.0 Message Driven EJB
+<br>
+188	weblogic	Weblogic 8.1 Webapp
+<br>
+189	weblogic	Weblogic 6.1 JDBC Connection Pool
+<br>
+190	weblogic	Weblogic 6.1 Message Driven EJB
+<br>
+191	weblogic	Weblogic Admin 8.1 Application
+<br>
+192	weblogic	Weblogic Admin 6.1 JTA Resource
+<br>
+193	weblogic	Weblogic 9.1 Message Driven EJB
+<br>
+194	weblogic	Weblogic Admin 7.0 JMS Destination
+<br>
+195	weblogic	Weblogic Admin 9.2 Stateful EJB
+<br>
+196	weblogic	Weblogic 9.1 JMS Destination
+<br>
+197	weblogic	Weblogic Admin 9.2 Stateless EJB
+<br>
+198	weblogic	Weblogic Admin 9.2 Execute Queue
+<br>
+199	weblogic	Weblogic Admin 9.1 Execute Queue
+<br>
+200	weblogic	Weblogic 9.2 JMS Server
+<br>
+201	weblogic	Weblogic Admin 7.0 Entity EJB
+<br>
+202	weblogic	Weblogic Admin 6.1 Stateful EJB
+<br>
+203	weblogic	Weblogic Admin 9.1 Application
+<br>
+204	weblogic	Weblogic Admin 6.1 Message Driven EJB
+<br>
+205	weblogic	Weblogic Admin 8.1 Entity EJB
+<br>
+206	weblogic	Weblogic 9.1 JTA Resource
+<br>
+207	weblogic	Weblogic 7.0 JMS Server
+<br>
+208	weblogic	Weblogic 8.1 JTA Resource
+<br>
+209	weblogic	Weblogic Admin 7.0 Message Driven EJB
+<br>
+210	weblogic	Weblogic Admin 9.2 JMS Destination
+<br>
+211	weblogic	Weblogic 7.0 JMS Destination
+<br>
+212	weblogic	Weblogic 7.0 Entity EJB
+<br>
+213	weblogic	Weblogic Admin 6.1 Execute Queue
+<br>
+214	weblogic	Weblogic Admin 9.2 Entity EJB
+<br>
+215	weblogic	Weblogic Admin 6.1 Webapp
+<br>
+216	weblogic	Weblogic Admin 9.2 JTA Resource
+<br>
+217	weblogic	Weblogic 8.1 Execute Queue
+<br>
+218	weblogic	Weblogic 9.2 JMS Destination
+<br>
+219	weblogic	Weblogic 9.2 JTA Resource
+<br>
+220	weblogic	Weblogic Admin 9.1 JTA Resource
+<br>
+221	weblogic	Weblogic Admin 9.2 Webapp
+<br>
+222	weblogic	Weblogic 7.0 Webapp
+<br>
+223	weblogic	Weblogic Admin 6.1 Stateless EJB
+<br>
+224	weblogic	Weblogic Admin 8.1 JMS Server
+<br>
+225	weblogic	Weblogic 9.2 Application
+<br>
+226	weblogic	Weblogic Admin 7.0 JTA Resource
+<br>
+227	weblogic	Weblogic Admin 7.0 JDBC Connection Pool
+<br>
+228	weblogic	Weblogic 7.0 Execute Queue
+<br>
+229	weblogic	Weblogic 7.0 JDBC Connection Pool
+<br>
+230	weblogic	Weblogic Admin 9.2 Message Driven EJB
+<br>
+231	weblogic	Weblogic 8.1 Stateful EJB
+<br>
+232	weblogic	Weblogic Admin 6.1 Application
+<br>
+233	weblogic	Weblogic 9.2 Message Driven EJB
+<br>
+234	weblogic	Weblogic Admin 9.1 Stateful EJB
+<br>
+235	weblogic	Weblogic Admin 8.1 JDBC Connection Pool
+<br>
+236	weblogic	Weblogic 8.1 Application
+<br>
+237	weblogic	Weblogic 7.0 Application
+<br>
+238	weblogic	Weblogic Admin 9.1 Entity EJB
+<br>
+239	weblogic	Weblogic Admin 7.0 JMS Server
+<br>
+240	weblogic	Weblogic 9.2 Stateless EJB
+<br>
+241	weblogic	Weblogic Admin 7.0 Stateful EJB
+<br>
+242	weblogic	Weblogic Admin 7.0 Application
+<br>
+243	weblogic	Weblogic Admin 9.1 Message Driven EJB
+<br>
+244	weblogic	Weblogic 6.1 Execute Queue
+<br>
+245	weblogic	Weblogic 9.1 Stateful EJB
+<br>
+246	weblogic	Weblogic 6.1 Stateless EJB
+<br>
+247	weblogic	Weblogic Admin 8.1 Stateful EJB
+<br>
+248	weblogic	Weblogic 6.1 Application
+<br>
+249	weblogic	Weblogic Admin 9.1 JDBC Connection Pool
+<br>
+250	weblogic	Weblogic Admin 9.1 Stateless EJB
+<br>
+251	weblogic	Weblogic 9.2 Entity EJB
+<br>
+252	weblogic	Weblogic Admin 9.2 JMS Server
+<br>
+253	weblogic	Weblogic Admin 9.2 Application
+<br>
+254	weblogic	Weblogic Admin 9.1 JMS Server
+<br>
+255	weblogic	Weblogic 9.2 Webapp
+<br>
+256	weblogic	Weblogic Admin 6.1 JMS Destination
+<br>
+257	websphere	WebSphere 5.0 Thread Pool
+<br>
+258	websphere	WebSphere 5.0 Webapp
+<br>
+259	websphere	WebSphere 6.1 Application
+<br>
+260	websphere	WebSphere 5.0 Connection Pool
+<br>
+261	websphere	WebSphere 6.0 Connection Pool
+<br>
+262	websphere	WebSphere 6.1 Thread Pool
+<br>
+263	websphere	WebSphere 6.1 Connection Pool
+<br>
+264	websphere	WebSphere 6.0 Thread Pool
+<br>
+265	websphere	WebSphere 5.0 Application
+<br>
+266	websphere	WebSphere 6.0 Webapp
+<br>
+267	websphere	WebSphere 6.1 EJB
+<br>
+268	websphere	WebSphere 6.1 Webapp
+<br>
+269	websphere	WebSphere 6.0 EJB
+<br>
+270	websphere	WebSphere 6.0 Application
+<br>
+271	websphere	WebSphere 5.0 EJB</div>
+</div><div style="color: #00b439;font-size: 16pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#24212;&#29992;application
+    </p>
+  </body>
+</html>
+</div><div style="color: #990000;font-size: 14pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#27010;&#24565;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Platform&#12289;Server&#12289;Service&#30340;&#19968;&#20010;&#38598;&#21512;<br >&#20026;&#20102;&#19968;&#20010;&#29305;&#23450;&#30340;&#19994;&#21153;&#30446;&#26631;&#65292;&#22312;&#24179;&#21488;&#12289;<br >server&#12289;service&#20043;&#19978;&#24314;&#31435;&#30340;&#19968;&#20010;&#19994;&#21153;&#35270;&#22270;&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      type<br >1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Generic Application<br >2&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;J2EE Application
+    </p>
+  </body>
+</html>
+</div><div style="color: #990000;font-size: 14pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#20855;&#20307;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#38081;&#36890;Ip&#32593;&#31649;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      hpunix
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      windows2003
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      hpnnm
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      oracle_nms
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      oracle_openview
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      windows&#12289;unix&#35745;&#21010;&#20219;&#21153;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#32593;&#32476;&#35774;&#22791;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#38450;&#28779;&#22681;
+    </p>
+  </body>
+</html>
+</div><div style="color: #0033ff;font-size: 18pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#27010;&#24565;&#32467;&#26500;
+    </p>
+  </body>
+</html>
+</div><div style="color: #00b439;font-size: 16pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      RRD
+    </p>
+  </body>
+</html>
+</div><div style="color: #990000;font-size: 14pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#24179;&#21488;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      server
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      service&#23454;&#20363;
+    </p>
+  </body>
+</html>
+</div><div style="color: #990000;font-size: 14pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      NODE_ID
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      server&#31867;&#22411;
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      service.instance.RRD
+    </p>
+  </body>
+</html>
+</div><div style="color: #0033ff;font-size: 18pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#29289;&#29702;&#32467;&#26500;
+    </p>
+  </body>
+</html>
+</div><div style="color: #00b439;font-size: 16pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      RRD&#20363;&#23376;
+    </p>
+  </body>
+</html>
+</div><div style="color: #990000;font-size: 14pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      0001
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      TOMCAT
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      TomcatConnector.50 .RRD
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      TomcatWebapp.50.RRD
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      ORACLE
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      OracleTablespace.80.RRD
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      OracleUserInstance.92.RRD
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      netdevice
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Interface.instance.RRD
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Interface.1.RRD
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Interface.2.RRD
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      system
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      disk
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      cpu
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      mem
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      process
+    </p>
+  </body>
+</html>
+</div><div style="color: #0033ff;font-size: 18pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#25554;&#20214;
+    </p>
+  </body>
+</html>
+</div><div style="color: #00b439;font-size: 16pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      plugin&#30446;&#24405;
+    </p>
+  </body>
+</html>
+</div><div style="color: #990000;font-size: 14pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      server-3.0.2\hq-engine\server\default\deploy\hq.ear\hq-plugins
+    </p>
+  </body>
+</html>
+</div><div style="color: #990000;font-size: 14pt;font-family: SansSerif, sans-serif; "><span id="show1_5" class="foldclosed" onClick="show_folder('1_5')" style="POSITION: absolute">+</span> <span id="hide1_5" class="foldopened" onClick="hide_folder('1_5')">-</span>
+
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#20855;&#20307;&#25554;&#20214;
+    </p>
+  </body>
+</html>
+</div><div id="fold1_5" style="POSITION: relative; VISIBILITY: visible;"><div style="color: #111111;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;activemq<br >2&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;apache<br >3&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bind<br >4&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;camagent<br >5&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;db2<br >6&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;dotnet<br >7&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;exchange<br >8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;geronimo<br >9&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;iis<br >10&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;iplanet<br >11&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;jboss<br >12&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;jmx<br >13&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;memcached<br >14&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;mqseries<br >15&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;mssql<br >16&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;mule<br >17&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;mysql<br >18&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;nagios<br >19&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;netdevice<br >20&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;netservices<br >21&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ntds<br >22&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ntp<br >23&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;oracle<br >24&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;postfix<br >25&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;postgresql<br >26&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;resin<br >27&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;servlet<br >28&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;sqlquery<br >29&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;sybase<br >30&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;system<br >31&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;vmware<br >32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;weblogic<br >33&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;websphere
+    </p>
+  </body>
+</html>
+</div><div style="color: #111111;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;activemq&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;activemq-plugin.xml<br >2&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;apache&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;apache-plugin.jar<br >3&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bind&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bind-plugin.jar<br >4&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;camagent&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;hqagent-plugin.jar<br >5&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;db2&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;db2-plugin.jar<br >6&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;dotnet&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;dotnet-plugin.jar<br >7&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;exchange&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;exchange-plugin.jar<br >8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;geronimo&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;geronimo-plugin.xml<br >9&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;iis&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;iis-plugin.jar<br >10&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;iplanet&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;iplanet-plugin.jar<br >11&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;jboss&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;jboss-plugin.jar<br >12&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;jmx&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;jmx-plugin.xml<br >13&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;memcached&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;memcached-plugin.jar<br >14&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;mqseries&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;mqseries-plugin.jar<br >15&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;mssql&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;mssql-plugin.jar<br >16&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;mule&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;mule-plugin.jar<br >17&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;mysql&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;mysql-plugin.jar<br >18&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;nagios&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;nagios-plugin.jar<br >19&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;netdevice&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;netdevice-plugin.jar<br >20&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;netservices&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;netservices-plugin.jar<br >21&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ntds&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ntds-plugin.jar<br >22&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ntp&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ntp-plugin.jar<br >23&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;oracle&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;oracle-plugin.jar<br >24&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;postfix&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;postfix-plugin.jar<br >25&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;postgresql&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;postgresql-plugin.jar<br >26&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;resin&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;resin-plugin.xml<br >27&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;servlet&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;servlet-plugin.jar<br >28&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;sqlquery&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;sqlquery-plugin.jar<br >29&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;sybase&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;sybase-plugin.jar<br >30&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;system&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;system-plugin.jar<br >31&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;vmware&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;vmware-plugin.jar<br >32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;weblogic&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;weblogic-plugin.jar<br >33&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;websphere&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;websphere-plugin.jar
+    </p>
+  </body>
+</html>
+</div>
+</div><div style="color: #0033ff;font-size: 18pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &#35789;&#27719;&#35299;&#37322;
+    </p>
+  </body>
+</html>
+</div><div style="color: #00b439;font-size: 16pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Platform &#8211; A machine/operating system combination or any network or storage device. Platforms are the lowest level of management, and include components such as CPU's, Network Interfaces, and File Systems.&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #00b439;font-size: 16pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Server &#8211; Any software that is installed on a platform under management. Databases, middleware, virtualization, application and web servers are all examples of servers. Servers run on platforms. Platforms host multiple Servers. Examples of servers include any installations of JBoss, Tomcat, or MySQL on a given platform.&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #00b439;font-size: 16pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Service &#8211; A component of a server dedicated to a specific purpose. Typically services are represented by the units of work of a given server. Different types of servers each define a list of one or more types of services they provide. Examples of services include Webapps deployed in Tomcat, or Virtual Hosts configured in Apache. Services can also be attached directly to a platform in the case of CPU, Network Interfaces and Filesystems.&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #00b439;font-size: 16pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Application &#8211; A collection of platforms, servers and services organized to fulfill a single business purpose. Applications typically have many servers and services, and can also run on more then one platform. A typical J2EE application modeled in HQ can contain Apache Virtual Hosts, Tomcat Webapps, JBoss Connection pools, and Oracle Instances.&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #00b439;font-size: 16pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Resource Type &#8211; A categorical description of a type of resource that can be managed. Upon installation, Hyperic HQ describes hundreds of resource types which include specifications for Name, Version, Available Metrics, and Available Control Actions. Resource types span Platforms, Servers, and Services.&#160;
+    </p>
+  </body>
+</html>
+</div><div style="color: #00b439;font-size: 16pt;font-family: SansSerif, sans-serif; ">
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Managed Resource &#8211; A specific instance of a resource type within the managed environment.&#160;
+    </p>
+  </body>
+</html>
+</div><SCRIPT language="JavaScript">
+fold_document();
+</SCRIPT>
+</body>
+</html>
